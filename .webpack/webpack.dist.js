@@ -1,5 +1,6 @@
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'production',
@@ -8,10 +9,21 @@ module.exports = {
         chunkFilename: '[id].[chunkhash].chunk.js',
         filename: '[contenthash:24].js',
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            chunks: ['main'],
+            filename: './index.html',
+            inject: 'body',
+            template: './src/index.html',
+            scriptLoading: 'defer',
+        }),
+    ],
     optimization: {
-        minimizer: [new TerserPlugin({
-            parallel: true,
-        })],
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+            }),
+        ],
         chunkIds: 'named',
         moduleIds: 'named',
         emitOnErrors: true,
