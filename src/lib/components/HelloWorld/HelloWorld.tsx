@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './HelloWorld.scss'
+import css from './HelloWorld.sass'
 
 type Props = {
     title: string | React.ReactNode

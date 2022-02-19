@@ -1,10 +1,10 @@
 import React from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { IntlProvider } from 'react-intl'
 
 import { useLocale } from '@app/store/hooks'
 
-import css from './App.scss'
+import css from './App.sass'
 import { Demo } from './routes'
 
 const App: React.FC = () => {
@@ -13,13 +13,9 @@ const App: React.FC = () => {
     return (
         <IntlProvider locale={locale} messages={messages}>
             <div className={css.container}>
-                <Switch>
-                    <Route exact path="/">
-                        <Demo />
-                    </Route>
-
-                    <Redirect to="/" />
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Demo />} />
+                </Routes>
             </div>
         </IntlProvider>
     )

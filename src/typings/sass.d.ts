@@ -1,4 +1,4 @@
-declare module '*.scss' {
+declare module '*.sass' {
     interface IClassNames {
         [className: string]: string
     }

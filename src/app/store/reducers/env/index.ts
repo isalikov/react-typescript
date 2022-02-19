@@ -19,8 +19,12 @@ export const envState: EnvState = {
 
 const envReducer = (
     state: EnvState = envState,
-    action: EnvAction
+    action?: EnvAction
 ): EnvState => {
+    if (!action) {
+        return state
+    }
+
     switch (action.type) {
         case EnvActionType.set_locale:
             return {

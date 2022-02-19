@@ -2,7 +2,7 @@ const path = require('path')
 
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const { DefinePlugin, HotModuleReplacementPlugin } = require('webpack')
+const { DefinePlugin } = require('webpack')
 const { merge: webpackMerge } = require('webpack-merge')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -43,7 +43,7 @@ const options = {
                 ],
             },
             {
-                test: /\.scss/,
+                test: /\.sass/,
                 use: [
                     {
                         loader: 'style-loader',
@@ -94,7 +94,6 @@ const options = {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
             },
         }),
-        isDevelopment && new HotModuleReplacementPlugin(),
         isDevelopment && new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
 }
