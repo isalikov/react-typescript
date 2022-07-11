@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import css from './HelloWorld.sass'
 
 type Props = {
-    title: string | React.ReactNode
+    title: string
 }
 
 const HelloWorld: React.FC<Props> = ({ title }) => {
-    return <span className={css.container}>{title}</span>
+    const [value, setValue] = useState(title)
+
+    const handleChange = (e) => {
+        setValue(e.target.value)
+    }
+
+    return (
+        <div className={css.container}>
+            <input type="text" onChange={handleChange} value={value} />
+            <span>{value}</span>
+        </div>
+    )
 }
 
 export default HelloWorld

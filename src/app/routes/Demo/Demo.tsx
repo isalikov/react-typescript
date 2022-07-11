@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FormattedMessage as Message } from 'react-intl'
+import { useIntl } from 'react-intl'
 
 import { HelloWorld } from '@lib/components'
 import { useTitle } from '@lib/hooks'
@@ -12,9 +12,11 @@ type Props = {}
 const Demo: React.FC<Props> = () => {
     useTitle('Demo')
 
+    const intl = useIntl()
+
     return (
         <div className={css.container}>
-            <HelloWorld title={<Message id="hello_world" />} />
+            <HelloWorld title={intl.formatMessage({ id: 'hello_world' })} />
         </div>
     )
 }

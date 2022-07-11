@@ -1,10 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
 
 const PORT = process.env.PORT || 8000
 
 module.exports = {
+    devtool: 'source-map',
     target: 'web',
     mode: 'development',
     output: {
@@ -25,7 +25,6 @@ module.exports = {
         errorDetails: true,
     },
     plugins: [
-        new webpack.SourceMapDevToolPlugin({}),
         new HtmlWebpackPlugin({
             filename: './index.html',
             template: './src/index.html',
