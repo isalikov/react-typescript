@@ -5,21 +5,23 @@ import { useIntl } from 'react-intl'
 import { useLocale } from '@app/hooks'
 import { Locale } from '@app/types/i18'
 
-import { useTitle } from '@lib/hooks'
+import { Page } from '@lib/components'
 
 import css from './Home.scss'
 
 type Props = {}
 
 const Home: React.FC<Props> = () => {
-    useTitle('Home')
+    document.title = 'Home'
 
     const intl = useIntl()
     const { locale, setLocale } = useLocale()
 
+    const title = intl.formatMessage({ id: 'home.title' })
+
     return (
-        <div className={css.container}>
-            <span>{intl.formatMessage({ id: 'home.title' })}</span>
+        <Page className={css.container} title={title}>
+            <span>{title}</span>
 
             <div className={css.actions}>
                 <label className={css.label} htmlFor={Locale.en}>
@@ -42,7 +44,7 @@ const Home: React.FC<Props> = () => {
                     <span>Española</span>
                 </label>
             </div>
-        </div>
+        </Page>
     )
 }
 
