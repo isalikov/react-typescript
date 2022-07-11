@@ -1,21 +1,12 @@
-import { combineReducers, compose, createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 
-import env, { envState, EnvState } from './reducers/env'
+import env from './env'
 
-export interface ReduxState {
-    env: EnvState
-}
+export const store = configureStore({
+    reducer: {
+        env,
+    },
+})
 
-const initialState: ReduxState = {
-    env: envState,
-}
-
-const composeEnhancers =
-    process.env.NODE_ENV !== 'production'
-        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-        : compose
-
-const enhancers = composeEnhancers()
-const reducers = combineReducers<ReduxState>({ env })
-
-export default createStore(reducers, initialState, enhancers)
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

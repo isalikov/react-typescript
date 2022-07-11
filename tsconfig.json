@@ -7,12 +7,11 @@
         "lib": ["es2019", "dom"],
         "module": "commonjs",
         "allowSyntheticDefaultImports": true,
-        "typeRoots": ["./node_modules/@types", "./src/typings"],
+        "typeRoots": ["./src/typings"],
         "baseUrl": ".",
         "paths": {
             "@app/*": ["src/app/*"],
-            "@lib/*": ["src/lib/*"],
-            "@typings/*": ["src/typings/*"]
+            "@lib/*": ["src/lib/*"]
         }
     },
     "exclude": ["node_modules", "dist"]

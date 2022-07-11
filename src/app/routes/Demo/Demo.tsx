@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { FormattedMessage as Message } from 'react-intl'
 
 import { HelloWorld } from '@lib/components'

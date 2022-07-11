@@ -7,7 +7,7 @@
 
 ### Features
 
-- React (react@17, react-router-dom@6, react-intl@5, react-redux@7)
+- React (react@18, react-router-dom@6, react-intl@5, react-redux@8, @reduxjs/toolkit)
 - SASS, CSS Modules
 - ESLint (Airbnb) / prettier / husky
 - Webpack setup (dev server, hmr, aliases, code splitting)

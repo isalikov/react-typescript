@@ -11,10 +11,8 @@ const options = {
     mode: 'none',
     resolve: {
         alias: {
-            '@src': path.resolve(__dirname, '../src'),
             '@app': path.resolve(__dirname, '../src/app'),
             '@lib': path.resolve(__dirname, '../src/lib'),
-            '@typings': path.resolve(__dirname, '../src/typings'),
         },
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.html'],
         modules: ['node_modules', 'src'],
