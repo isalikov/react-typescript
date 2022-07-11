@@ -1,19 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
-import { Locale } from '@app/types/i18'
-
+import { onSetLocaleAction } from './actions'
 import initialState from './initialState'
 
 export const envSlice = createSlice({
     initialState,
     name: 'env',
     reducers: {
-        setLocaleAction: (state, action: PayloadAction<Locale>) => {
-            return {
-                ...state,
-                locale: action.payload,
-            }
-        },
+        setLocaleAction: onSetLocaleAction,
     },
 })
 

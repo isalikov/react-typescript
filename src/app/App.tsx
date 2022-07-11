@@ -5,8 +5,8 @@ import { Route, Routes } from 'react-router-dom'
 
 import { useLocale } from '@app/hooks'
 
-import css from './App.sass'
-import { Demo } from './routes'
+import css from './App.scss'
+import { Home } from './routes'
 
 const App: React.FC = () => {
     const { locale, messages } = useLocale()
@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <IntlProvider locale={locale} messages={messages}>
             <div className={css.container}>
                 <Routes>
-                    <Route path="/" element={<Demo />} />
+                    <Route path="/" element={<Home />} />
                 </Routes>
             </div>
         </IntlProvider>

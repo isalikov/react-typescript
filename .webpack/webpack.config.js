@@ -41,7 +41,7 @@ const options = {
                 ],
             },
             {
-                test: /\.sass/,
+                test: /\.scss/,
                 use: [
                     {
                         loader: 'style-loader',
