@@ -9,11 +9,7 @@ import { Page } from '@lib/components'
 
 import css from './Home.scss'
 
-type Props = {}
-
-const Home: React.FC<Props> = () => {
-    document.title = 'Home'
-
+const Home = () => {
     const intl = useIntl()
     const { locale, setLocale } = useLocale()
 

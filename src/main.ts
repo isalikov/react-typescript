@@ -1,3 +1,3 @@
-import AppLoader from './app'
+import Bootstrap from './app'
 
-AppLoader()
+Bootstrap()

@@ -8,7 +8,7 @@ import { useLocale } from '@app/hooks'
 import css from './App.scss'
 import { Home } from './routes'
 
-const App: React.FC = () => {
+const App = () => {
     const { locale, messages } = useLocale()
 
     return (
