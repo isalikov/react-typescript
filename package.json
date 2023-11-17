@@ -21,6 +21,7 @@
       "stylelint --fix"
     ],
     "*.{ts,tsx}": [
+      "tsc --noEmit --skipLibCheck",
       "eslint --fix --max-warnings=0",
       "prettier --write"
     ]
