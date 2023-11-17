@@ -19,6 +19,7 @@ module.exports = {
     hot: true,
     host: '0.0.0.0',
     port: PORT,
+    open: ['/'],
   },
   stats: {
     children: true,
