@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useIntl } from 'react-intl'
 
-import { useLocale } from '@app/hooks'
+import { useLocale, useTranslate } from '@app/hooks'
 import { Locale } from '@app/types/i18'
 
 import { Page } from '@lib/components'
@@ -10,10 +10,10 @@ import { Page } from '@lib/components'
 import css from './Home.scss'
 
 const Home = () => {
-    const intl = useIntl()
+    const { translate } = useTranslate()
     const { locale, setLocale } = useLocale()
 
-    const title = intl.formatMessage({ id: 'home.title' })
+    const title = translate('home.title')
 
     return (
         <Page className={css.container} title={title}>
@@ -27,7 +27,7 @@ const Home = () => {
                         checked={locale === Locale.en}
                         onChange={() => setLocale(Locale.en)}
                     />
-                    <span>English</span>
+                    <span>{translate('lang.en')}</span>
                 </label>
 
                 <label className={css.label} htmlFor={Locale.es}>
@@ -37,7 +37,7 @@ const Home = () => {
                         checked={locale === Locale.es}
                         onChange={() => setLocale(Locale.es)}
                     />
-                    <span>Española</span>
+                    <span>{translate('lang.es')}</span>
                 </label>
             </div>
         </Page>

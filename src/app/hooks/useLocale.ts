@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import en from '@app/i18/en'
 import es from '@app/i18/es'
 
-import { AppDispatch, RootState } from '@app/store'
+import { AppDispatch, AppState } from '@app/store'
 import { setLocaleAction } from '@app/store/env'
 import { I18, Locale } from '@app/types/i18'
 
@@ -25,7 +25,7 @@ const getMessages = (locale: Locale): I18 => {
 const useLocale = () => {
     const dispatch = useDispatch<AppDispatch>()
 
-    const locale = useSelector<RootState, Locale>((state) => state.env.locale)
+    const locale = useSelector<AppState, Locale>((state) => state.env.locale)
     const messages = useMemo(() => getMessages(locale), [locale])
 
     const setLocale = (payload: Locale) => {
