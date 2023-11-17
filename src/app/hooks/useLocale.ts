@@ -10,33 +10,33 @@ import { setLocaleAction } from '@app/store/env'
 import { I18, Locale } from '@app/types/i18'
 
 const getMessages = (locale: Locale): I18 => {
-    switch (locale) {
-        case Locale.en:
-            return en
+  switch (locale) {
+    case Locale.en:
+      return en
 
-        case Locale.es:
-            return es
+    case Locale.es:
+      return es
 
-        default:
-            return en
-    }
+    default:
+      return en
+  }
 }
 
 const useLocale = () => {
-    const dispatch = useDispatch<AppDispatch>()
+  const dispatch = useDispatch<AppDispatch>()
 
-    const locale = useSelector<AppState, Locale>((state) => state.env.locale)
-    const messages = useMemo(() => getMessages(locale), [locale])
+  const locale = useSelector<AppState, Locale>((state) => state.env.locale)
+  const messages = useMemo(() => getMessages(locale), [locale])
 
-    const setLocale = (payload: Locale) => {
-        dispatch(setLocaleAction(payload))
-    }
+  const setLocale = (payload: Locale) => {
+    dispatch(setLocaleAction(payload))
+  }
 
-    return {
-        locale,
-        messages,
-        setLocale,
-    }
+  return {
+    locale,
+    messages,
+    setLocale,
+  }
 }
 
 export default useLocale
