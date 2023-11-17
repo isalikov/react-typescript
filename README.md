@@ -9,7 +9,7 @@
 
 - React (react@18, react-router-dom@6, react-intl@6, react-redux@8, @reduxjs/toolkit)
 - CSS Modules
-- ESLint (Airbnb) / prettier / husky
+- ESLint / stylelint / prettier / husky
 - Webpack setup (dev server, hmr, aliases, code splitting)
 
 ### Usage
