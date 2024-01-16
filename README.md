@@ -2,7 +2,7 @@
 
 ### Requirements
 
-- [Nodejs ^18](https://nodejs.org/en/)
+- [Nodejs ^20](https://nodejs.org/en/)
 - [Yarn ^1.22](https://yarnpkg.com/)
 
 ### Features
